@@ -6,17 +6,18 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform TargetObjectTF;
     //[Range(1.0f, 6.0f)] public float TargetRadius;
+    [SerializeField] private LineRenderer lineRenderer;
     [Range(20.0f, 75.0f)] public float LaunchAngle;
 
-    private Rigidbody rigid;
+    //private Rigidbody rigid;
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     // Start is called before the first frame update
     void Start()
     {
-        rigid = GetComponent<Rigidbody>();
+        //rigid = GetComponent<Rigidbody>();
         initialPosition = transform.position;
-        initialRotation = transform.rotation;
+        initialRotation = transform.rotation;    
     }
 
     // Update is called once per frame
@@ -45,6 +46,20 @@ public class PlayerController : MonoBehaviour
         Vector3 globalVelocity = transform.TransformDirection(localVelocity);
 
         // launch the object by setting its initial velocity and flipping its state
-        rigid.velocity = globalVelocity;
+
+        transform.position = localVelocity;
+
+        //rigid.velocity = globalVelocity;
     }
+
+    /*void DrawPath(float vo, float angle, int step)
+    {
+        int totalTime = 10;
+
+        lineRenderer.positionCount = (int) (totalTime / step) + 2;
+        for(int i = 0; i < totalTime; i += step)
+        {
+            
+        }
+    }*/
 }
