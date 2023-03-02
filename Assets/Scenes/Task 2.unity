@@ -512,8 +512,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1216831293}
   endPoint: {fileID: 1083665583}
-  flightTime: 2
-  maxHeight: 5
+  flightTime: 1
+  maxHeight: 4
 --- !u!114 &1216831295
 MonoBehaviour:
   m_ObjectHideFlags: 0

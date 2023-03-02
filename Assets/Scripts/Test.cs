@@ -22,6 +22,7 @@ public class Test : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Randomizer();
+            StopAllCoroutines();
             StartCoroutine(Para());
         }
     }
@@ -47,7 +48,7 @@ public class Test : MonoBehaviour
 
     private void Randomizer()
     {
-  
+
         randomPosition.x = Random.Range(-5.67f, 5.67f);
         randomPosition.y = 0f;
         randomPosition.z = Random.Range(-5.7f, 5.7f);
